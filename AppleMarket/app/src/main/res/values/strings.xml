@@ -8,7 +8,7 @@
     <string name="dialog_button_negative">취소</string>
     <string name="location_0">내배캠동</string>
     <string name="hot">39.3°C</string>
-    <string name="manner"><u>매너온도</u></string>
+    <string name="manner">매너온도</string>
     <string name="detail_chat">채팅하기</string>
     <string name="notification_title">키워드 알림</string>
     <string name="notification_channel_name">My Channel One</string>

@@ -5,18 +5,15 @@ import android.graphics.Paint
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.android.applemarket.MainActivity.Companion.EXTRA_PRODUCT_ENTITY
-import com.android.applemarket.ProductManager.setPreferenceStatus
-import com.android.applemarket.ProductObject.decimalFormat
+import androidx.activity.OnBackPressedCallback
+import com.android.applemarket.Constants.EXTRA_PREFERENCE_STATUS
+import com.android.applemarket.Constants.EXTRA_PRODUCT_ENTITY
+import com.android.applemarket.Constants.EXTRA_PRODUCT_ID
+import com.android.applemarket.ProductExtension.decimalFormat
 import com.android.applemarket.databinding.ActivityDetailBinding
 import com.google.android.material.snackbar.Snackbar
 
 class DetailActivity : AppCompatActivity() {
-    companion object {
-        const val EXTRA_PRODUCT_ID = "extra_product_id"
-        const val EXTRA_PREFERENCE_STATUS = "extra_preference_status"
-    }
-
     private val binding: ActivityDetailBinding by lazy {
         ActivityDetailBinding.inflate(layoutInflater)
     }
@@ -33,11 +30,18 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
+    private val onBackPressedCallback = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            setResult()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         initView()
+        this.onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
     }
 
     private fun initView() {

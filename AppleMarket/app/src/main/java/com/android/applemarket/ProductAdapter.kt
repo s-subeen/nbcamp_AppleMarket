@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.android.applemarket.ProductObject.decimalFormat
+import com.android.applemarket.ProductExtension.decimalFormat
 import com.android.applemarket.databinding.ItemProductRecyclerBinding
 
 class ProductAdapter(
@@ -39,8 +39,7 @@ class ProductAdapter(
         }
 
         with(holder) {
-            productImageView.setImageResource(item.resId ?: R.drawable.sample1)
-            productImageView.clipToOutline = true
+            productImageView.setImageResource(item.resId)
             productName.text = item.name
             productLocation.text = item.location
             productPrice.text = item.price?.decimalFormat() + context.getString(R.string.text_won)

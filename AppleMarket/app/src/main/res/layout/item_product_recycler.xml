@@ -5,15 +5,26 @@
     android:layout_height="wrap_content"
     android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/ivProduct"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:background="@drawable/iv_corner_radius"
-        android:src="@drawable/sample1"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivProduct"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/iv_corner_radius"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sample1" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tvProductName"
@@ -26,7 +37,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivProduct"
+        app:layout_constraintStart_toEndOf="@id/cardView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -38,7 +49,7 @@
         android:text="수원시 영통구 원천동"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivProduct"
+        app:layout_constraintStart_toEndOf="@id/cardView"
         app:layout_constraintTop_toBottomOf="@id/tvProductName" />
 
     <TextView
@@ -51,7 +62,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivProduct"
+        app:layout_constraintStart_toEndOf="@id/cardView"
         app:layout_constraintTop_toBottomOf="@id/tvProductLocation" />
 
     <ImageView

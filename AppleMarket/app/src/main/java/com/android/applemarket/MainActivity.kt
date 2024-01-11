@@ -9,7 +9,6 @@ import android.media.RingtoneManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
@@ -21,8 +20,11 @@ import androidx.core.app.NotificationCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.android.applemarket.DetailActivity.Companion.EXTRA_PREFERENCE_STATUS
-import com.android.applemarket.DetailActivity.Companion.EXTRA_PRODUCT_ID
+import com.android.applemarket.Constants.EXTRA_PREFERENCE_STATUS
+import com.android.applemarket.Constants.EXTRA_PRODUCT_ENTITY
+import com.android.applemarket.Constants.EXTRA_PRODUCT_ID
+import com.android.applemarket.Constants.NOTIFICATION_CHANNEL_ID
+import com.android.applemarket.Constants.NOTIFICATION_ID
 import com.android.applemarket.ProductManager.getIndexProductItem
 import com.android.applemarket.ProductManager.loadList
 import com.android.applemarket.ProductManager.removeProductItem
@@ -30,12 +32,6 @@ import com.android.applemarket.ProductManager.setPreferenceStatus
 import com.android.applemarket.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    companion object {
-        const val EXTRA_PRODUCT_ENTITY = "extra_product_entity"
-        const val NOTIFICATION_CHANNEL_ID = "one-channel"
-        const val NOTIFICATION_ID = 11
-    }
-
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
