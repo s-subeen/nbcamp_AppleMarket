@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AppleMarket</string>
+    <string name="hot">39.3°C</string>
+    <string name="manner"><u>매너온도</u></string>
+    <string name="detail_chat">채팅하기</string>
+</resources>
